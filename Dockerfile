@@ -1,3 +1,6 @@
+# Author: Paulo Baraldi Mausbach
+# LNLS - Brazilian Synchrotron Light Source Laboratory
+
 FROM python:3.6.8-stretch
 
 #======================#
@@ -40,10 +43,10 @@ RUN apt-get -y install swig
 
 RUN pip3.6 install pcaspy
 
-#Mount directory where host data will be
+#Mount directory where host data will be shared
 
 RUN mkdir /usr/local/poemonitor-ioc
 
-WORKDIR /usr/local/poemonitor-ioc/withoutApiLogin
+WORKDIR /usr/local/poemonitor-ioc
 
 CMD python3 poemonitor-ioc.py
