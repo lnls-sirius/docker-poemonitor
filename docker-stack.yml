@@ -1,17 +1,15 @@
 version: "3.3"
 
 services:
-    poemonitor:
+    ioc:
         deploy:
             mode: replicated
             replicas: 1
         networks:
             - poemonitor-network
-        build:
-            context: '.'
-            dockerfile: Dockerfile-poemonitor
+        image: lnlscon/poemonitor:v1.0
         volumes:
-            - "/storage/misc/repository/poemonitor-ioc/src/ioc:/usr/local/poemonitor-ioc/"
+            - "/storage/misc/repository/poemonitor-ioc/src/ioc/withoutApiLogin:/usr/local/poemonitor-ioc"
         logging:
             driver: "json-file"
             options:
