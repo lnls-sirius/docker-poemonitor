@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+    ioc:
+        network_mode: "host"
+        build: '.'
+        image: 'lnlscon/poemonitor:v1.0'
+        volumes:
+            - "/home/paulomausbach/Documents/ScriPYts/poemonitor/src/ioc/withoutApiLogin:/usr/local/poemonitor-ioc"
+        logging:
+            driver: "json-file"
+            options:
+                max-file: "10"
+                max-size: "10m"
