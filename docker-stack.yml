@@ -5,6 +5,9 @@ services:
         deploy:
             mode: replicated
             replicas: 1
+	    placement:
+	       constraints:
+	       - node.hostname == CA-RaCtrl-CO-Srv-1
         networks:
             - poemonitor-network
         image: lnlscon/poemonitor:v1.0
